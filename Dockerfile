@@ -1,5 +1,5 @@
-FROM node:8.15.0-alpine
+FROM circleci/node:8.11.3
 
-RUN apk --no-cache add bash py-pip ca-certificates tar gzip openssh-client && pip install --upgrade awsebcli==3.14.9 && mkdir ~/.aws
+RUN sudo apt-get install awscli
 
 CMD ["/bin/bash"]
